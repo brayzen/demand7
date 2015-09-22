@@ -77,6 +77,8 @@
 
 <%= link_to 'Back', deals_path %>
 
+<%= social_share_button_tag(@deal.title) %>
+
 <%= render partial: 'comments/form', deal: @deal %>
 
 <h2>Comments</h2>
