@@ -14,6 +14,7 @@ class DealPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       if user.admin?
+        return scope.where(published: !@pending) if @pending.present?
         scope.all
       else
         scope.where(published: true, private: false)

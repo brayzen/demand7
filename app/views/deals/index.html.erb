@@ -1,5 +1,4 @@
 <h1>Listing Deals</h1>
-
   <h2> Active Deals </h2>
   <table>
   <thead>
@@ -65,5 +64,7 @@
 </table>
 
 <br>
-
+<% if current_user.present? && current_user.admin? %>
+  <%= link_to 'See the Unpublished deals', deals_path, params: { pending: true } %>
+<% end %>
 <%= link_to 'New Deal', new_deal_path %>

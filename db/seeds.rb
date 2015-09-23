@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 100.times do
-  User.create(
+  User.create!(
     name: Faker::Name.name,
     email: Faker::Internet.email,
     password: 'password',
@@ -14,7 +14,7 @@
     )
 end
 
-User.create(
+User.create!(
 name: 'admin',
 email: 'admin@example.com',
 password: 'password',
@@ -22,7 +22,7 @@ admin: true,
 )
 
 10.times do
-  Deal.create(
+  Deal.create!(
     title: Faker::Lorem.sentence(rand(3..15)),
     image: 'image/path',
     description: Faker::Lorem.paragraph(1),
@@ -37,7 +37,7 @@ admin: true,
 end
 
 10.times do
-  Deal.create(
+  Deal.create!(
     title: Faker::Lorem.sentence(rand(3..15)),
     image: 'image/path',
     description: Faker::Lorem.paragraph(1),
@@ -53,7 +53,7 @@ end
 end
 
 10.times do
-  Deal.create(
+  Deal.create!(
     title: Faker::Lorem.sentence(rand(3..15)),
     image: 'image/path',
     description: Faker::Lorem.paragraph(1),
@@ -61,17 +61,17 @@ end
     location: 'Seattle, WA',
     start: Faker::Time.between(60.days.ago, Time.now, :all),
     end: Faker::Time.forward(30),
-    amount: 25,
+    amount: rand(10..20),
     owner_id: User.all.sample.id,
-    published: true,
+    published: false,
     private: true,
     )
 end
 
 
 40.times do
-  Commitment.create(
-    payment: 10,
+  Commitment.create!(
+    payment: rand(10),
     deal_id: Deal.all.sample.id,
     user_id: User.all.sample.id,
   )

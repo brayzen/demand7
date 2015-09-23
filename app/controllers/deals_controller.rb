@@ -13,6 +13,7 @@ class DealsController < ApplicationController
   end
 
   def index
+    @pending = params[:pending]
     @deals = policy_scope Deal
   end
 
