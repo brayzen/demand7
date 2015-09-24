@@ -25,6 +25,7 @@ group :production do
 end
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'byebug'
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
@@ -35,7 +36,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'sqlite3'
   gem 'spring'
   gem 'web-console', '~> 2.0'
 end
