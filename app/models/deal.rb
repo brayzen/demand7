@@ -1,4 +1,4 @@
- class Deal < ActiveRecord::Base
+class Deal < ActiveRecord::Base
   default_scope -> { order('created_at DESC') }
   mount_uploader :image, ImageUploader
   has_many :commitments
