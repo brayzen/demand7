@@ -8,8 +8,8 @@ class Deal < ActiveRecord::Base
   has_many :users, through: :commitments
   validates :title, length: { in: 3..60 }
   validates :description, presence: true
-  validates :goal, numericality: {  greater_than: 0 }
-  validates :amount, numericality: {  greater_than: 0 }
+  validates :goal, numericality: { greater_than: 0 }
+  validates :amount, numericality: { greater_than: 0 }
   validates :end, presence: true
   validates :start, presence: true
   validate :date_validation
@@ -21,23 +21,23 @@ class Deal < ActiveRecord::Base
   end
 
   def funded?
-    self.users.count >= self.goal
+    users.count >= goal
   end
 
   def active? # published and not expired
-    self.end > Time.now && self.start <= Time.now && self.published
+    self.end > Time.now && start <= Time.now && published
   end
 
   def archived? # expired deals
-    self.end < Time.now && self.published
+    self.end < Time.now && published
   end
 
   def published?
-    self.published
+    published
   end
 
   def flagged?
-    self.flag
+    flag
   end
 
   private
