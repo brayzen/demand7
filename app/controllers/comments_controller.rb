@@ -55,7 +55,6 @@ class CommentsController < ApplicationController
   private
 
   def create_helper
-
   end
 
   def set_comment

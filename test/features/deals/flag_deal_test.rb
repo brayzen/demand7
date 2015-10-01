@@ -7,7 +7,7 @@ feature "Search Form" do
     deal = deals(:widgets)
     visit deal_path(deal.id)
     click_on "Flag this deal for admin review"
-    page.text.must_include "An admin will review this listing to make sure it confirms with the Terms of Service."
+    page.text.must_include "We'll review this listing to make sure it conforms with the TOS."
     assert_equal deal.flag, true
   end
 
@@ -29,6 +29,6 @@ feature "Search Form" do
     click_on "Flag this deal for admin review"
     visit deal_path(deal.id)
     click_on "Flag this deal for admin review"
-    page.text.must_include "Thanks for the heads up. This listing has already been reported."
+    page.text.must_include "Thanks! This listing has already been reported."
   end
 end

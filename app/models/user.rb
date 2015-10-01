@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
-
   def deal_owner?(deal)
     deal.owner == self
   end
@@ -21,7 +20,7 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    self.admin
+    admin
   end
 
   def self.from_omniauth(auth)
