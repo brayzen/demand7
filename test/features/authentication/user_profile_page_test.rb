@@ -7,10 +7,7 @@ feature "Authentication::ProfilePage" do
     click_link('Profile')
     page.text.must_include 'Joe User'
     page.text.must_include 'Reset Password'
-
-    #in deals sponsored list:
     page.text.must_include 'Seahawks'
-    #in deals committed to list:
     page.text.must_include 'Widgets'
   end
 
@@ -19,9 +16,7 @@ feature "Authentication::ProfilePage" do
     visit root_path
     click_link('Profile')
     page.text.must_include 'Jeff User'
-    #in deals sponsored list:
     page.text.must_include 'Widgets'
-    #in deals committed to list:
     page.text.must_include "0 deals committed to"
   end
 
@@ -30,9 +25,7 @@ feature "Authentication::ProfilePage" do
     visit root_path
     click_link('Profile')
     page.text.must_include 'Jane User'
-    #in deals sponsored list:
     page.text.must_include "No sponsored deals."
-    #in deals committed to list:
     page.text.must_include 'Seahawks'
   end
 
@@ -41,11 +34,8 @@ feature "Authentication::ProfilePage" do
     visit root_path
     click_link('Profile')
     page.text.must_include 'Jose User'
-    #in deals sponsored list:
     page.text.must_include "No sponsored deals."
-    #in deals committed to list:
     page.text.must_include "0 deals committed to"
   end
 end
-
 

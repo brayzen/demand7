@@ -28,22 +28,22 @@ class DealsController < ApplicationController
 
   def flag
     if @deal.flag
-      flash[:notice] = "Thanks for the heads up. This listing has already been reported. An admin will review this listing to make sure it confirms with the Terms of Service."
+      flash[:notice] = "Thanks! This listing has already been reported. " \
+                       "We'll review to make sure it conforms with the Terms of Service."
       redirect_to root_path
     else
       @deal.flag = true
       @deal.save
-      flash[:notice] = "Thanks for the heads up. An admin will review this listing to make sure it confirms with the Terms of Service."
+      flash[:notice] = "Thanks for the heads up. We'll review this listing to make sure it conforms with the TOS."
       redirect_to root_path
     end
   end
 
   def unflag
     @deal.flag = false
-    if @deal.save
-      flash[:notice] = "Unflagged!"
-      redirect_to root_path
-    end
+    @deal.save
+    flash[:notice] = "Unflagged!"
+    redirect_to root_path
   end
 
   def new
@@ -94,11 +94,13 @@ class DealsController < ApplicationController
   end
 
   private
+
   def set_deal
     @deal = Deal.find(params[:id])
   end
 
   def deal_params
-    params.require(:deal).permit(:title, :image, :description, :goal, :location, :start, :end, :published, :private, :amount, :owner_id, :flag, :user_id => [])
+    params.require(:deal).permit(:title, :image, :description, :goal, :location,
+                                 :start, :end, :published, :private, :amount, :owner_id, :flag, :user_id => [])
   end
 end
