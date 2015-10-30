@@ -24,6 +24,7 @@ gem 'omniauth-twitter'
 # gem 'omniauth-linkedin'
 gem 'gravtastic'
 gem 'foundation-rails'
+gem 'dotenv-rails'
 
 group :production do
   gem 'pg'
@@ -31,7 +32,6 @@ group :production do
 end
 
 group :development, :test do
-  gem 'dotenv-rails'
   gem 'byebug'
   gem 'rubocop'
   gem 'launchy'

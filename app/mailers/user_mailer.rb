@@ -3,7 +3,7 @@ class UserMailer < ActionMailer::Base
 
   def welcome_email(user)
     @user = user
-    @url = '/sign_in(#{@user})'
+    @url = url_for(@user)
     mail(to: @user.email, subject: 'Welcome to IgniteBot!')
   end
 end
