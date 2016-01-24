@@ -11,7 +11,7 @@ class User::RegistrationsController < Devise::RegistrationsController
   def create
     # raise 'made it HERE YAY, now die'
     super
-    UserMailer.welcome_email(@user).deliver_now
+    # UserMailer.welcome_email(@user).deliver_now
   end
 
   # GET /resource/edit

@@ -1,5 +1,5 @@
 <div class="row">
-<div class="large-9 columns">
+<div class="large-3 columns">
 
 <%= form_for(@deal, html: { multipart: true }) do |f| %>
   <% if @deal.errors.any? %>
@@ -18,52 +18,65 @@
     <%= f.label :title, '*Title' %><br>
       <p>(60 characters max)</p>
     <%= f.text_field :title %>
+    <hr>
   </div>
   <div class="field">
     <%= f.label :image %><br>
     <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+    <hr>
   </div>
   <div class="field">
     <%= f.label :description, '*Description' %><br>
     <%= f.text_area :description %>
+    <hr>
   </div>
   <div class="field">
     <%= f.label :goal, '*Goal' %><br>
     <p>How many commitments do you need to tip this deal?</p>
     <%= f.number_field :goal %>
+    <hr>
   </div>
   <div class="field">
     <%= f.label :location %><br>
     <%= f.text_field :location %>
+    <hr>
   </div>
   <div class="field">
     <%= f.label :start, '*Deal Start Date' %><br>
     <%= f.date_select :start %>
+    <hr>
   </div>
   <div class="field">
     <%= f.label :end, '*Deal End Date (30 day default)' %><br>
     <%= f.date_select :end, :default => 30.days.from_now %>
+    <hr>
   </div>
   <div class="field">
     <%= f.label :private, 'Private?'%><br>
     <p> Private deals can be shared but are not searchable or listed on the index. </p>
     <%= f.check_box :private %>
+    <hr>
   </div>
   <div class="field">
     <%= f.label :amount, '*Amount' %><br>
     <p> Dollar amount required for each commitment </p>
     <%= f.number_field :amount %>
+    <hr>
   </div>
   <div class="field">
     <%= f.label :published, 'Published?' %><br>
     <p>Click here only when you are ready to publish. Published deals will be available to support immediately. To preview your deal, click below with this box unchecked. Deals cannot be unpublished! </p>
     <%= f.check_box :published %>
+    <hr>
   </div>
 
   <div class="actions">
     <%= f.submit "Preview / Publish", class: "button comment-button" %>
+    <hr>
   </div>
   <p>* Required fields</p>
 <% end %>
+</div>
+<div class="preview-window">
 </div>
 </div>
