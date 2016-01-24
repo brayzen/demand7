@@ -1,11 +1,14 @@
 <div class="deal-show">
   <div class="row">
-    <div class="large-9 columns">
+    <div class="large-3 columns">
       <h1>New Deal</h1>
+
+    <%= render 'form' %>
     </div>
+    <div class="large-9 columns">
+      <%= render 'show' %>
+    </div>
+
   </div>
-
-  <%= render 'form' %>
-
   <%= link_to 'Back', deals_path %>
 </div>

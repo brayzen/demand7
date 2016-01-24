@@ -1,10 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=Passion+One);
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+// @import url(https://fonts.googleapis.com/css?family=Passion+One);
+// @import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700);
 
 html, body {
   background: #fff !important;
 }
 
+$font-choice: 'Inconsolata' !important;
 
 /* Flash message styles */
 
@@ -63,7 +65,7 @@ nav {
   z-index: 200;
   h1 {
     a {
-      font-family: 'Passion One', cursive !important;
+      font-family: 'Inconsolata' !important;
       font-size: 2rem !important;
       font-weight: normal !important;
       color: #7C8D9B!important;
@@ -88,7 +90,7 @@ nav {
   -o-background-size: cover;
   background-size: cover;
   h1 {
-    font-family: 'Passion One', cursive;
+    font-family: 'Inconsolata';
     position: absolute;
     top: 125px;
     left:0;
@@ -100,11 +102,11 @@ nav {
     font-size: 4rem;
     p {
       font-size: 20px;
-      font-family: 'Roboto', sans-serif !important;
+      font-family: 'Inconsolata', bold, 'Roboto', sans-serif !important;
     }
   }
   .sign-up-btn {
-    font-family: 'Passion One', cursive;
+    font-family: 'Inconsolata';
     position: absolute;
     background: #D6FDB2;
     left:0;
@@ -120,7 +122,7 @@ nav {
     }
   }
   .welcome {
-    font-family: 'Passion One', cursive;
+    font-family: 'Inconsolata' bold;
     position: absolute;
     font-size: 2rem;
     left:0;
@@ -162,14 +164,14 @@ nav {
 
 /* row CSS for Deal boxes on index page. */
 .deal-boxes {
-  font-family: 'Roboto', sans-serif !important;
+  font-family: 'Inconsolata','Roboto', sans-serif !important;
   h4 {
-    font-family: 'Passion One', cursive;
+    font-family: 'Inconsolata';
     margin-bottom: 10px;
     color: #434335;
   }
   h5 {
-    font-family: 'Passion One', cursive;
+    font-family: 'Inconsolata';
   }
   .sub-title {
     font-size: 30px;
@@ -197,12 +199,12 @@ nav {
 
 /* Row of closed deals on front page */
 .closed-boxes {
-  font-family: 'Roboto', sans-serif !important;
+  font-family: 'Inconsolata', sans-serif !important;
   clear: both;
   position: relative;
   top: 40px;
   h5 {
-    font-family: 'Passion One', cursive;
+    font-family: 'Inconsolata';
   }
 }
 .ed-button {
@@ -212,7 +214,7 @@ nav {
 
 /* footer styles */
 footer {
-  font-family: 'Roboto', sans-serif !important;
+  font-family: 'Inconsolata', sans-serif !important;
   font-size: 15px;
   font-weight: bold;
   margin-top: 100px;
@@ -221,4 +223,27 @@ footer {
   background: #94A9BB;
   padding-top: 75px;
   text-align: center;
+}
+
+.deal-show {
+  font-family: $font-choice;
+}
+
+.row {
+  @extend .deal-show;
+  font-family: $font-choice;
+  h1, p {
+    // font-family: 'Inconsolata' !important;
+    @extend .deal-show;
+  }
+}
+
+.preview-window {
+  @extend .deal-show;
+  border: 1px solid black;
+  border-radius: 4px;
+  h1, p {
+    font-family: 'Inconsolata' !important;
+    @extend .deal-show;
+  }
 }

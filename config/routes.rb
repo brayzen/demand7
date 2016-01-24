@@ -3,10 +3,11 @@ Rails.application.routes.draw do
 
   get 'pages/about'
 
-  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", registrations: "user/registrations"}
 
   resources :users do
     get :show
+    get :create
   end
 
   resources :deals do
